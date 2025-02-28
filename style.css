@@ -1,0 +1,194 @@
+/* General Styles */
+body {
+  background-color: black;
+  font-family: "Pixelify Sans", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem; /* Adjusts size based on screen width */
+  letter-spacing: 10px;
+  color: #fffffc;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Center Modal & Make It Responsive */
+#modal {
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-image: url("/AppBackground.png"); /* Background Image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dice Window (Responsive Size) */
+#window {
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #ffadad, #a0c4ff) 1;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 90%;
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Keeps it square */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Dice Image */
+.diceImage {
+  width: auto;
+
+  height: auto;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* New Block Button */
+#newBlockBtn {
+  width: 90%;
+  max-width: 480px;
+  height: auto;
+  padding: 20px;
+  border: 5px solid;
+  border-image: linear-gradient(45deg, #ffadad, #a0c4ff) 1;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effects */
+#newBlockBtn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-image: linear-gradient(45deg, #a0c4ff, #ffadad) 1;
+  transform: scale(1.05);
+}
+#newBlockBtn:active {
+  background-color: rgba(0, 0, 0, 1);
+  transform: scale(0.95);
+}
+
+/* Button Text */
+.btnText {
+  text-align: center;
+  font-size: 2rem;
+  color: #fffffc;
+  transition: color 0.3s ease-in-out;
+}
+#newBlockBtn:hover .btnText {
+  color: #ffadad;
+}
+
+/* Rolling Dice Animation */
+.rolling {
+  animation: spin 0.5s linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1.2);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fade-In Effect */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🔹 Responsive Design Tweaks */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+  }
+
+  #window {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .diceImage {
+    width: 60%;
+    max-width: 120px;
+  }
+
+  #newBlockBtn {
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .btnText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  #modal {
+    width: 95%;
+  }
+
+  #window {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .diceImage {
+    width: 50%;
+    max-width: 100px;
+  }
+
+  #newBlockBtn {
+    width: 80%;
+    max-width: 250px;
+    padding: 12px;
+  }
+
+  .btnText {
+    font-size: 1.2rem;
+  }
+}
